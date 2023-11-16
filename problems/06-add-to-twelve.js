@@ -13,6 +13,17 @@ addToTwelve([1]); // false
 ***********************************************************************/
 
 // your code here
+function addToTwelve(arr, i = 0) {
+  if (arr.length === 1) return false;
+
+  if (arr[i] + arr[i + 1] === 12) return true;
+  if (i === arr.length - 1) {
+    return false;
+  }
+
+  i++;
+  return addToTwelve(arr, i);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
