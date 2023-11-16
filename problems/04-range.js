@@ -10,9 +10,19 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
-
 // your code here
+function range(start, end, arr = []) {
+  if (end < start) return [];
 
+  if (start === end) {
+    return arr;
+  }
+
+  arr.push(start);
+
+  start++;
+  return range(start, end, arr);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
