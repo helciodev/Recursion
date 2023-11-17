@@ -17,11 +17,17 @@ factorial(5); // 120
 ***********************************************************************/
 
 // your code here
-  
+const factorial = (num) => {
+  if (num === 1 || num === 2) {
+    return num * 1;
+  }
+
+  return num * factorial(num - 1);
+};
+console.log(factorial(3)); // 6
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = factorial;
 } catch (e) {
   module.exports = null;
 }
-  

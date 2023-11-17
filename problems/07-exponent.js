@@ -21,9 +21,18 @@ exponent(5, 5); // 3125
 ***********************************************************************/
 
 function exponent(b, n) {
-  // your code here
+  if (n > 0) {
+    if (n === 1) {
+      return b;
+    } else {
+      return b * exponent(b, n - 1);
+    }
+  } else {
+    return (1 / b) * exponent(b, n + 1);
+  }
 }
-  
+
+console.log(exponent(3, 2)); // 9
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = exponent;
