@@ -7,11 +7,26 @@ Examples:
 
 flatten([]); // []
 flatten([1, 2]); // [1, 2]
+flatten([[1,3]])
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
 // your code here
-  
+function flatten(arr) {
+  if (!arr.length) return [];
+  const flat = [];
+
+  arr.forEach((el) => {
+    if (Array.isArray(el)) {
+      flat.push(...flatten(el));
+    } else {
+      flat.push(el);
+    }
+  });
+  return flat;
+}
+
+console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = flatten;

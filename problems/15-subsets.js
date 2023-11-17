@@ -15,6 +15,16 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 // your code here
+let subsets = (array) => {
+  const lastIndex = array.length - 1;
+
+  if (array.length === 0) {
+    return [[]];
+  }
+  let el = array.slice(-1);
+  let prev = subsets(array.slice(0, -1));
+  return prev.concat(prev.map((x) => x.concat(el)));
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

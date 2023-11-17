@@ -11,6 +11,13 @@ isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
 // your code here
+let isSorted = (array) => {
+  if (array.length === 2) {
+    return array[0] < array[1];
+  } else {
+    return isSorted(array.slice(1)) && array[0] < array[1];
+  }
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
